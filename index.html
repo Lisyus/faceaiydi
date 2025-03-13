@@ -8,10 +8,18 @@
     <link rel="icon" href="assets/img/favicon.ico" type="image/png">
 </head>
 <body>
-    <div>Teachable Machine Image Model</div>
-<button type="button" onclick="init()">Start</button>
+    <div>
+        <h1>Todos somos Erick</h1>
+    </div>
+<button type="button" onclick="init()">espichame!</button>
+
+<div class="contenedor">
 <div id="webcam-container"></div>
+<div id="pasacosas">?</div>
 <div id="label-container"></div>
+</div>
+
+
 <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@latest/dist/teachablemachine-image.min.js"></script>
 <script type="text/javascript">
@@ -64,6 +72,10 @@
             const classPrediction =
                 prediction[i].className + ": " + prediction[i].probability.toFixed(2);
             labelContainer.childNodes[i].innerHTML = classPrediction;
+
+            if (prediction [i].className === "esteban chparro" && prediction[i].probability > 0.5) {
+                alert("hola esteban chparro");
+            }
         }
     }
 </script>
